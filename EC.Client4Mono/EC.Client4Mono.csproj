@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B36C8012-620A-4320-ABAF-2756E362FC05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EC</RootNamespace>
+    <AssemblyName>EC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;MONO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>..\Mono\Lib\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Mono\EC\Client.cs">
+      <Link>Client.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\Data.cs">
+      <Link>Data.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\DataReceiveArgs.cs">
+      <Link>DataReceiveArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ECProxyHandler.cs">
+      <Link>ECProxyHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\IClient.cs">
+      <Link>IClient.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ICommunicationObject.cs">
+      <Link>ICommunicationObject.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\IData.cs">
+      <Link>IData.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\InterfaceBuilder.cs">
+      <Link>InterfaceBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\IPacket.cs">
+      <Link>IPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\IProxyHandler.cs">
+      <Link>IProxyHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\IServiceChannel.cs">
+      <Link>IServiceChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\MessageID.cs">
+      <Link>MessageID.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\MethodReturnArgs.cs">
+      <Link>MethodReturnArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\PacketBase.cs">
+      <Link>PacketBase.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\PacketReceiveArgs.cs">
+      <Link>PacketReceiveArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ProtobufPacket.cs">
+      <Link>ProtobufPacket.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ProxyException.cs">
+      <Link>ProxyException.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ProxyFactory.cs">
+      <Link>ProxyFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\RemoteInvokeArgs.cs">
+      <Link>RemoteInvokeArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\Result.cs">
+      <Link>Result.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ResultStatus.cs">
+      <Link>ResultStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\RPC\Header.cs">
+      <Link>RPC\Header.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\RPC\MethodCall.cs">
+      <Link>RPC\MethodCall.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\RPC\MethodResult.cs">
+      <Link>RPC\MethodResult.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\ServiceChannel.cs">
+      <Link>ServiceChannel.cs</Link>
+    </Compile>
+    <Compile Include="..\Mono\EC\TypeMapper.cs">
+      <Link>TypeMapper.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

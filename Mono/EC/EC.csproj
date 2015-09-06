@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{134DBCE4-1510-44A9-A351-37327741E458}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EC</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>EC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\Lib\protobuf-net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="IPacket.cs" />
+    <Compile Include="IData.cs" />
+    <Compile Include="PacketReceiveArgs.cs" />
+    <Compile Include="DataReceiveArgs.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="PacketBase.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="RPC\Header.cs" />
+    <Compile Include="TypeMapper.cs" />
+    <Compile Include="RPC\MethodCall.cs" />
+    <Compile Include="RPC\MethodResult.cs" />
+    <Compile Include="ProtobufPacket.cs" />
+    <Compile Include="MethodReturnArgs.cs" />
+    <Compile Include="ICommunicationObject.cs" />
+    <Compile Include="ProxyFactory.cs" />
+    <Compile Include="RemoteInvokeArgs.cs" />
+    <Compile Include="ECProxyHandler.cs" />
+    <Compile Include="IProxyHandler.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="ResultStatus.cs" />
+    <Compile Include="ServiceChannel.cs" />
+    <Compile Include="IServiceChannel.cs" />
+    <Compile Include="ProxyException.cs" />
+    <Compile Include="MessageID.cs" />
+    <Compile Include="InterfaceBuilder.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup />
+</Project>
